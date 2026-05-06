@@ -11,6 +11,7 @@ console.log(name)
 // const는 값 재할당 불가
 const group = "뉴진스"
 //group = "아이브"
+console.log(group);
 
 // 데이터 타입
 console.log("타입은", typeof 42)
