@@ -39,8 +39,8 @@ console.log(`내림차순 : ${fruits}`);
 
 //Object 내부의 값을 기준으로 비교 후 정렬
 numbers.sort((a, b) => {
-  if (a > b) return 1; // 양수면 b를 앞
-  if (a < b) return -1; // 음수면 a를 앞
+  if (a > b) return 1; // 양수면 b를 앞에
+  if (a < b) return -1; // 음수면 a를 앞에
   return 0; // 변화 X
 });
 
@@ -81,3 +81,14 @@ console.log(data.filter((x) => x % 2 == 0));
 
 // 3보다 큰 수를 오름차순 정렬 출력
 console.log(data.filter((x) => x > 3).sort((a, b) => a - b)); // 체이닝 방식
+
+// find()와 findIndex() 함수
+// numbers = [1, 8, 7, 4, 3];
+// 첫번째로 조건과 일치하는 값을 찾음. 없으면 undefined
+console.log(numbers.find((x) => x % 2 === 0));
+// 첫번째로 조건과 일치하는 값을 찾음. 없으면 undefined
+console.log(numbers.findIndex((x) => x % 2 === 0));
+
+// reduce() 함수 -- 누적 계산할 때 사용
+console.log(numbers.reduce((x, y) => x + y, 0)); // 끝에 넣은 0은 초기 값
+

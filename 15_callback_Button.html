@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="startBtn" style="height: 30pt; width: 60pt; font-size: 12pt">
+      알림 시작
+    </button>
+    <script>
+      function showMessage(message) {
+        alert(message);
+      }
+      document
+        .getElementById("startBtn")
+        .addEventListener("click", function () {
+          console.log("버튼 클릭됨 2초 후 알림 뜸");
+          setTimeout(function () {
+            showMessage("안녕하세요. 2초가 지났어요.");
+          }, 2000);
+        });
+    </script>
+  </body>
+</html>

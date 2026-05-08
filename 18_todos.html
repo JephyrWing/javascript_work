@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+</head>
+<body>
+  <button id="btn">할 일 불러오기</button>
+  <div id="list"> 이 곳에 할 일이 들어와요 </div>
+</body>
+<script>
+// AJAX(Asynchronous Javascript And XML) 방식 : 
+// 2000년대 초 : XMLHttpRequewt 
+// -> 2010년대 : jquery.ajax() 
+// -> 현재까지 : fetch() --- Text-stringify() <-> Object-json() 주고받을 때 변환 필요
+// -> 최근에 나오는 것 : axios() --- 변환기능 내장
+// 전부 통틀어 AJAX 방식이라고 부름
+
+document.getElementById("btn").addEventListener("click", function(){
+  fetch("https://jsonplaceholder.typicode.com/todos?_limit=5")
+    .then((response) => {return response.json();})
+    .then((data) => {
+      console.log(data);
+      const list = document.getElementById("list");
+      list.innerHTML = '';
+      data.forEach(todo => {
+        // div 태그를 생성
+        const div = document.createElement('div');
+        // 아직 존재하지 않는 태그에 미리 설정하기 위한 textContent
+        div.textContent = `${todo.completed? '✔' : '♡'} ${todo.title}`
+        list.appendChild(div) 
+      });
+    }
+  );
+})
+</script>
+</html>
