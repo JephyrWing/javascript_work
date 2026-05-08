@@ -1,7 +1,7 @@
 // Promise : 이 작업이 마무리 되면 결과를 꼭 돌려준다는 약속
 // resolve : 함수, 성공하면 then으로 결과를 넘겨줌
 // reject : 함수, 실패하면 catch로 결과를 넘겨줌
-
+ 
 const myPromise = new Promise((resolve, reject) => {
   setTimeout(() => {
     const text = prompt("따봉을 입력해줘!! 따봉도치야 고마워!")
